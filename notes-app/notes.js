@@ -26,7 +26,7 @@ const removeNote = (title) => {
         saveNotes(notesToKeep)
     } else {
         console.log(chalk.red.inverse('No note found!'))
-    }    
+    }
 }
 
 const listNotes = () => {
