@@ -1,0 +1,15 @@
+{
+    "vscode_custom_css.imports": [
+        "file:///C:/Users/Mcsyauqi/custom.css"
+    ],
+    "vscode_custom_css.policy": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+
+    // "gitlens.menus": {
+    //     "editorGroup": {
+    //         "blame": false,
+    //         "compare": false
+    //     },
+    // }
+}

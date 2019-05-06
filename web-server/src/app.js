@@ -33,7 +33,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'Help page',
+        helpText: 'This is some helpful text',
         title: 'Help',
         name: 'Ahmad Thariq Syauqi'
     })
@@ -43,6 +43,20 @@ app.get('/weather', (req, res) => {
     res.send({
         forecast: 'Hujan',
         location: 'Banyumas'
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        errorMessage: 'Help article not found',
+        name: 'Ahmad Thariq Syauqi'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        errorMessage: 'Page not found',
+        name: 'Ahmad Thariq Syauqi'
     })
 })
 
