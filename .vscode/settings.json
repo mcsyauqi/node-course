@@ -4,8 +4,7 @@
     ],
     "vscode_custom_css.policy": true,
     "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-    "terminal.integrated.shell.windows": "{Path\\to\\your\\shell.exe}"
+    "editor.fontLigatures": true
 
     // "gitlens.menus": {
     //     "editorGroup": {
