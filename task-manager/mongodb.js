@@ -1,9 +1,5 @@
 // CRUD create read update delete
 
-// const mongodb = require('mongodb')
-// const MongoClient = mongodb.MongoClient
-// const ObjectID = mongodb.ObjectID
-
 const {
     MongoClient,
     ObjectID
@@ -63,23 +59,63 @@ MongoClient.connect(connectionURL, {
     //     console.log(result.ops)
     // })
 
-    db.collection('tasks').findOne({
-        _id: new ObjectID("5cd390dfec3fbd3d0c83a5ff")
-    }, (error, task) => {
-        if (error) {
-            return console.log('Cannot find task!')
-        }
+    // db.collection('tasks').findOne({
+    //     _id: new ObjectID("5cd390dfec3fbd3d0c83a5ff")
+    // }, (error, task) => {
+    //     if (error) {
+    //         return console.log('Cannot find task!')
+    //     }
 
-        console.log(task)
-    })
+    //     console.log(task)
+    // })
 
-    db.collection('tasks').find({
-        completed: false
-    }).toArray((error, tasks) => {
-        if (error) {
-            return console.log('Cannot find tasks!')
-        }
+    // db.collection('tasks').find({
+    //     completed: false
+    // }).toArray((error, tasks) => {
+    //     if (error) {
+    //         return console.log('Cannot find tasks!')
+    //     }
 
-        console.log(tasks)
+    //     console.log(tasks)
+    // })
+
+    // db.collection('users').updateOne({
+    //     _id: new ObjectID("5cd38c903009b532ecbfe26f")
+    // }, {
+    //     $inc: {
+    //         age: -1
+    //     }
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    // db.collection('tasks').updateMany({
+    //     completed: false
+    // }, {
+    //     $set: {
+    //         completed: true
+    //     }
+    // }).then((result) => {
+    //     console.log(result.modifiedCount)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    // db.collection('users').deleteMany({
+    //     age: 21
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    db.collection('tasks').deleteOne({
+        description: 'Membeli beras'
+    }).then((result) => {
+        console.log(result)
+    }).catch((error) => {
+        console.log(error)
     })
 })
