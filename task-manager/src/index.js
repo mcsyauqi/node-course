@@ -10,6 +10,14 @@ const port = process.env.PORT || 3000
 //     res.status(503).send('We are on maintenance!')
 // })
 
+// const multer = require('multer')
+// const upload = multer({
+//     dest: 'images'
+// })
+// app.post('/upload', upload.single('upload'), (req, res) => {
+//     res.send()
+// })
+
 app.use(express.json())
 app.use(userRouter)
 app.use(taskRouter)
@@ -17,18 +25,3 @@ app.use(taskRouter)
 app.listen(port, () => {
     console.log('Server is up on port: ' + port)
 })
-
-// const Task = require('./models/task')
-// const User = require('./models/user')
-
-// const main = async () => {
-//     // const task = await Task.findById('5cd8da420b4354240cbb3bfa')
-//     // await task.populate('owner').execPopulate()
-//     // console.log(task.owner)
-
-//     const user = await User.findById('5cd8da350b4354240cbb3bf7')
-//     await user.populate('tasks').execPopulate()
-//     console.log(user.tasks)
-// }
-
-// main()

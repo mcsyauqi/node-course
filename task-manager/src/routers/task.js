@@ -18,11 +18,12 @@ router.post('/tasks', auth, async (req, res) => {
     }
 })
 
-// GET /tasks?completed=true
-// GET /tasks?limit=10&skip=20
-// GET /tasks?sortBy=createdAt:desc
 router.get('/tasks', auth, async (req, res) => {
     try {
+        // GET /tasks?completed=true
+        // GET /tasks?limit=10&skip=20
+        // GET /tasks?sortBy=createdAt:desc
+
         // const tasks = await Task.find({
         //     owner: req.user._id,
         // })
@@ -119,20 +120,21 @@ router.delete('/tasks/:id', auth, async (req, res) => {
     }
 })
 
-// router.delete('/tasks/deleteAll', auth, async (req, res) => {
-//     try {
-//         const tasks = await Task.find({
-//             owner: user._id
-//         })
+router.delete('/tasks/deleteAll', auth, async (req, res) => {
+    res.send('test')
+    // try {
+    //     const tasks = await Task.find({
+    //         owner: user._id
+    //     })
 
-//         if (!tasks) {
-//             return res.status(404).send()
-//         }
+    //     if (!tasks) {
+    //         return res.status(404).send()
+    //     }
 
-//         task.deleteMany()
-//     } catch (e) {
-//         res.status(400).send(e)
-//     }
-// })
+    //     task.deleteMany()
+    // } catch (e) {
+    //     res.status(400).send(e)
+    // }
+})
 
 module.exports = router
